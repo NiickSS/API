@@ -2,10 +2,30 @@ import  express  from "express";
 
 const app = express();
 
-app.get('/', (req, res)=>{
-    res.json({
-        message: "Opa"
-    });
+app.get('/projects', (req, res)=>{
+    res.json([
+        "Projeto 1", 
+        "Projeto 2"
+    ]);
+});
+
+app.post('/projects', (req, res)=>{
+    res.json([
+        "Projeto 3"
+    ]);
+});
+
+app.put('/projects/:id', (req,res)=>{
+    res.json([
+        "Projeto 4"
+    ]);
+});
+
+app.delete('/projects/:id', (req, res)=>{
+    res.json([
+        "Projeto 2",
+        "Projeto 3"
+    ]);
 });
 
 app.listen(3000, () =>{
