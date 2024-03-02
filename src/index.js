@@ -3,6 +3,9 @@ import  express  from "express";
 const app = express();
 
 app.get('/projects', (req, res)=>{
+    const {title, owner, page} = req.query;
+    console.log(title, owner, page);
+
     res.json([
         "Projeto 1", 
         "Projeto 2"
